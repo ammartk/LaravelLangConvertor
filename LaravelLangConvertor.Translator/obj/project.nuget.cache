@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xzTpQ2/AMVIDBoEgJyg2DK70HAMvztW+uh+trhh7pDu/ERGQkXvU2rGCsosrJRMOtMpwqofQF2uqk6npBOKkfQ==",
+  "dgSpecHash": "118c/6je6LhUP5lQUt1pFHnRp4SvM30LY4WUyaQseRGj3Fij66dIvsv4UgWF7hW9SAWiwa4a+1dS80qJUiAoyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ammar.tahir\\source\\repos\\LaravelLangConvertor\\LaravelLangConvertor.Translator\\LaravelLangConvertor.Translator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Ammar\\source\\repos\\LaravelLangConvertor\\LaravelLangConvertor.Translator\\LaravelLangConvertor.Translator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ammar\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

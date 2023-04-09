@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaravelLangConvertor", "LaravelLangConvertor\LaravelLangConvertor.csproj", "{35E8BF50-FCC9-4C26-8A97-3876DB630167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaravelLangConvertor", "LaravelLangConvertor\LaravelLangConvertor.csproj", "{35E8BF50-FCC9-4C26-8A97-3876DB630167}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F78AB9D-2C6C-4475-8686-626C293029B9} = {2F78AB9D-2C6C-4475-8686-626C293029B9}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaravelLangConvertor.Parser", "LaravelLangConvertor.Parser\LaravelLangConvertor.Parser.csproj", "{B776B107-F6B9-4AE5-A98A-F7EDA0B5A5FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaravelLangConvertor.Parser", "LaravelLangConvertor.Parser\LaravelLangConvertor.Parser.csproj", "{B776B107-F6B9-4AE5-A98A-F7EDA0B5A5FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaravelLangConvertor.Translator", "LaravelLangConvertor.Translator\LaravelLangConvertor.Translator.csproj", "{2F78AB9D-2C6C-4475-8686-626C293029B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaravelLangConvertor.Translator", "LaravelLangConvertor.Translator\LaravelLangConvertor.Translator.csproj", "{2F78AB9D-2C6C-4475-8686-626C293029B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

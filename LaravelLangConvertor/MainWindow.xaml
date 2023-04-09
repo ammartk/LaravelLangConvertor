@@ -1,12 +1,79 @@
 ﻿<Window x:Class="LaravelLangConvertor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LaravelLangConvertor"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Laravel Language File Convertor" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+
+
+        <!-- File picker -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20">
+            <TextBlock Text="Select a file:" VerticalAlignment="Center"/>
+            <Button x:Name="FilePickerButton" Content="Choose File" Margin="10 0 0 0"
+                Click="FilePickerButton_Click"/>
+            <TextBlock x:Name="SelectedFileTextBlock" Margin="10 0 0 0"
+                   VerticalAlignment="Center" TextWrapping="Wrap" Width="400"/>
+            <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Right"
+        Margin="0,10,10,0" VerticalAlignment="Top" Click="SettingsButton_Click"/>
+
+        </StackPanel>
+        <!-- Language selection -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20">
+            <TextBlock Text="Select a language:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="LanguageComboBox" Margin="10 0 0 0"
+                    SelectedIndex="0" SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBoxItem Content="Bulgarian" Tag="BG"/>
+                <ComboBoxItem Content="Czech" Tag="CS"/>
+                <ComboBoxItem Content="Danish" Tag="DA"/>
+                <ComboBoxItem Content="Dutch" Tag="NL"/>
+                <ComboBoxItem Content="English" Tag="EN"/>
+                <ComboBoxItem Content="Estonian" Tag="ET"/>
+                <ComboBoxItem Content="Finnish" Tag="FI"/>
+                <ComboBoxItem Content="French" Tag="FR"/>
+                <ComboBoxItem Content="German" Tag="DE"/>
+                <ComboBoxItem Content="Greek" Tag="EL"/>
+                <ComboBoxItem Content="Hungarian" Tag="HU"/>
+                <ComboBoxItem Content="Italian" Tag="IT"/>
+                <ComboBoxItem Content="Japanese" Tag="JA"/>
+                <ComboBoxItem Content="Latvian" Tag="LV"/>
+                <ComboBoxItem Content="Lithuanian" Tag="LT"/>
+                <ComboBoxItem Content="Polish" Tag="PL"/>
+                <ComboBoxItem Content="Portuguese" Tag="PT"/>
+                <ComboBoxItem Content="Romanian" Tag="RO"/>
+                <ComboBoxItem Content="Russian" Tag="RU"/>
+                <ComboBoxItem Content="Slovak" Tag="SK"/>
+                <ComboBoxItem Content="Slovenian" Tag="SL"/>
+                <ComboBoxItem Content="Spanish" Tag="ES"/>
+                <ComboBoxItem Content="Swedish" Tag="SV"/>
+                <ComboBoxItem Content="Chinese (simplified)" Tag= "ZH"/>
+                <!-- Add more items for each supported language -->
+            </ComboBox>
+            <!-- Translate button -->
+            <Button x:Name="TranslateButton" Content="Translate" Margin="10 0 0 0"
+                Click="TranslateButton_Click"/>
+            <Button x:Name="WriteButton" Content="Write" Margin="10 0 0 0"
+                Click="WriteButton_Click"/>
+            <TextBlock Text="Select a translator:" VerticalAlignment="Center" Margin="10 0 0 0"/>
+            <ComboBox x:Name="TranslatorComboBox" Margin="10 0 0 0"
+    SelectedIndex="0">
+                <ComboBoxItem Content="DeepL Translator" Tag="deepl"/>
+            </ComboBox>
+        </StackPanel>
+        <!-- List view -->
+        <ListView Grid.Row="2" x:Name="ListView" Margin="10" BorderThickness="1"
+              BorderBrush="Gray" AlternationCount="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Key" Width="100" DisplayMemberBinding="{Binding Column1}"/>
+                    <GridViewColumn Header="Main Language" Width="100" DisplayMemberBinding="{Binding Column2}"/>
+                    <GridViewColumn Header="TranslatedLanguage" Width="100" DisplayMemberBinding="{Binding Column3}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

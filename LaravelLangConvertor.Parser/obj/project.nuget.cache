@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/juaFISWXSrOeLrh+J5LsXYriJYeWeHCu9SeVlxiYI/AW79zr6L0ZKtxLJCb6fiopySVXbxULmUeEfpIrummyw==",
+  "dgSpecHash": "/k3ONfrKmHxynBnxhb1ivrBtz2++tjiOm97Z+KtwpNYcThze/ZAl1Gbg4ki14whYkLZ/fCis9J/stfutwg0KfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ammar.tahir\\source\\repos\\LaravelLangConvertor\\LaravelLangConvertor.Parser\\LaravelLangConvertor.Parser.csproj",
+  "projectFilePath": "C:\\Users\\Ammar\\source\\repos\\LaravelLangConvertor\\LaravelLangConvertor.Parser\\LaravelLangConvertor.Parser.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

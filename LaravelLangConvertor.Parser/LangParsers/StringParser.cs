@@ -9,38 +9,56 @@ namespace LaravelLangConvertor.Parser.LangParsers
 {
     public class StringParser : ILangParsers
     {
-        public Dictionary<string, string> GetParsedLaravelKeyValuePair(string file)
+        public Dictionary<string, string> GetParsedLaravelKeyValuePair(string filename)
         {
-            Dictionary<string, string> result = new Dictionary<string, string>();
+            Dictionary<string, string> languageData = new Dictionary<string, string>();
             try
             {
-                var fileHandle = File.Open(file, FileMode.Open);
-                using (var reader = new StreamReader(fileHandle))
+                
+                int state = 0;
+                StringBuilder sb = new StringBuilder();
+                var fileHandle = File.Open(filename, FileMode.Open);
+                using (var file = new StreamReader(fileHandle))
                 {
-                    using (var stringReader = new StringReader(reader.ReadToEnd()))
+                    var line = "";
+                    while ((line = file.ReadLine()) != null)
                     {
-                        string data;
-                        while((data = stringReader.ReadLine()) != null)
+                        line = line.Trim();
+                        if (line.StartsWith("return ["))
                         {
-                            if (data.StartsWith("<php"))
-                            {
-                                continue;
-                            }
-                            else if (data.StartsWith(">"))
-                            {
-                                continue;
-                            }
-                            
+                            // Start of the language array
+                            continue;
+                        }
+                        if (line.StartsWith("];"))
+                        {
+                            // End of the language array
+                            break;
+                        }
+                        if (line.StartsWith("'"))
+                        {
+                            // Found a key-value pair
+                            var keyValue = line.Split("=>");
+                            var key = keyValue[0].Trim('\'', ' ');
+                            var val = keyValue[1].Trim('\'', ',', ' ');
+                            languageData.Add(key, val);
                         }
                     }
                 }
+
+                // Output the key-value pairs
+                foreach (var pair in languageData)
+                {
+                    Console.WriteLine($"{pair.Key}: {pair.Value}");
+                }
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
 
-            return result;
+            return languageData;
         }
+            
     }
 }
